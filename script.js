@@ -537,7 +537,7 @@ document.querySelector('.reload-buttonaa').addEventListener('mouseenter', functi
       const styleTag = document.createElement('style');
       styleTag.textContent = `
           * {
-              font-family: Arial, sans-serif !important;
+              font-family: DM Sans, sans-serif !important;
           }
       `;
       doc.head.appendChild(styleTag);
@@ -576,7 +576,7 @@ document.querySelector('.reload-buttonaa').addEventListener('mouseenter', functi
   });
   
   document.addEventListener('DOMContentLoaded', function() {
-      const contentFetchingProtocolExpectedOutput = "𝙼𝚊𝚍𝚎 𝚋𝚢 𝚍𝚒𝚗𝚐𝚞𝚜𝚌𝚑𝚊𝚗!";
+      const contentFetchingProtocolExpectedOutput = "Made by kdcrs!";
       const contentFetchingProtocolElements = document.querySelectorAll('.Xt7Lm9Kp3R8f, #h2Dv8e46q');
   
       // Making sure fetching protocols are up to date
@@ -936,7 +936,7 @@ document.querySelector('.reload-buttonaa').addEventListener('mouseenter', functi
   
   <div class="content-containervv" id="browserlogsvv">
     <h3>Helios Browser Logs</h3>
-    <div id="logContainer" style="max-height: 400px; overflow-y: auto; border: 3px solid #66ffa1; padding: 10px; background: #222; color: #fff; border-radius: 5px; width: 750px;"></div>
+    <div id="logContainer" style="max-height: 400px; overflow-y: auto; border: 3px solid #4c80dc; padding: 10px; background: #222; color: #fff; border-radius: 5px; width: 750px;"></div>
   </div>
   
   
@@ -1088,7 +1088,7 @@ document.querySelector('.reload-buttonaa').addEventListener('mouseenter', functi
           console.error('Failed to fetch content from all proxies');
           hideSpinner(tab);
           content.innerHTML = `
-              <div style="color: #ff6161; padding: 20px; text-align: center;">
+              <div style="color: #4c80dc; padding: 20px; text-align: center;">
                   <h2>Error loading content</h2>
                   <p>Unable to fetch the requested content. Please try again later.</p>
                   <p>sorry :(</p>
@@ -1294,7 +1294,7 @@ document.querySelector('.reload-buttonaa').addEventListener('mouseenter', functi
               :host {
                   all: initial;
                   background-color: #fff !important;
-                  font-family: Arial, sans-serif;
+                  font-family: DM Sans, sans-serif;
               }
           `;
           shadowRoot.appendChild(defaultStyle);
