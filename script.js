@@ -920,7 +920,7 @@ document.querySelector('.reload-buttonaa').addEventListener('mouseenter', functi
       } else if (url === 'supernova://settings') {
           content.innerHTML = `
           <div class="sidebarvv">
-    <h1>Helios Settings</h1>
+    <h1>Supernova Settings</h1>
   
   <button class="active" onclick="showCategory('historyvv')">History</button>
     <button onclick="showCategory('cloakingvv')">Cloaking</button>
@@ -935,7 +935,7 @@ document.querySelector('.reload-buttonaa').addEventListener('mouseenter', functi
   </div>
   
   <div class="content-containervv" id="browserlogsvv">
-    <h3>Helios Browser Logs</h3>
+    <h3>Supernova Browser Logs</h3>
     <div id="logContainer" style="max-height: 400px; overflow-y: auto; border: 3px solid #4c80dc; padding: 10px; background: #222; color: #fff; border-radius: 5px; width: 750px;"></div>
   </div>
   
@@ -946,7 +946,7 @@ document.querySelector('.reload-buttonaa').addEventListener('mouseenter', functi
     <button onclick="openInBlob()">Open in blob:</button>
   </div>
   <div class="content-containervv" id="miscvv">
-    <h31>Customize Helios's Appearance</h31><div class="theme-preview-container">
+    <h31>Customize Supernova's Appearance</h31><div class="theme-preview-container">
   <div class="theme-preview" onclick="activatePreview(this)">
     <div class="browser-simulation">
       <div class="browser-header">
