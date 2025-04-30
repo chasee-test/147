@@ -971,7 +971,7 @@ document.querySelector('.reload-buttonaa').addEventListener('mouseenter', functi
   </div></div>
   
           `;
-          tab.querySelector('.tab-nameaa').textContent = Supernova Settings';
+          tab.querySelector('.tab-nameaa').textContent = 'Supernova Settings';
           tabs[currentTabIndex].content = content.innerHTML;
           tabs[currentTabIndex].url = url;
   
