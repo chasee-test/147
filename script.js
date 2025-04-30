@@ -1,15 +1,24 @@
 document.querySelector('.reload-buttonaa').addEventListener('mouseenter', function() {
     this.classList.add('hover-triggered');
-  });
+  }); // Ensure this matches the correct opening brace and parenthesis
   
   document.querySelector('.reload-buttonaa').addEventListener('animationend', function() {
     this.classList.remove('hover-triggered');
-  });
   
   
   document.addEventListener("DOMContentLoaded", function() {
-      console.log("DEBUG: Script is running...");
-  
+    const reloadButton = document.querySelector('.reload-buttonaa');
+    if (reloadButton) {
+        reloadButton.addEventListener('mouseenter', function() {
+            this.classList.add('hover-triggered');
+        });
+        
+        reloadButton.addEventListener('animationend', function() {
+            this.classList.remove('hover-triggered');
+        });
+    }
+});
+
       // List of official Supernova URLs
       const officialUrls = [
           "https://helios-browser.vercel.app/",
