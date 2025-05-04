@@ -25,7 +25,7 @@ document.querySelector('.reload-buttonaa').addEventListener('mouseenter', functi
           "https://helios-blue.vercel.app/",
           "https://helios-browser.rf.gd",
           "https://helios-browser.w3spaces.com/",
-          "https://helios-browser.pages.dev/",
+          "https://supernova-website.pages.dev/",
           "https://helios-browser.ct.ws"
       ];
   
