@@ -306,8 +306,8 @@ document.querySelector('.reload-buttonaa').addEventListener('mouseenter', functi
   window.onload = applySavedTheme;
   
   
-  const heliosMessageHistory = [];
-  const HELIOS_API_KEY_PARTS = [
+  const supernovaMessageHistory = [];
+  const NOVA_API_KEY_PARTS = [
     's', 'k', '-', 'o', 'r', '-', 'v', '1', '-', '8', 'e', 'f', '6', '7', '3', 'c', 
     'a', '3', '4', 'g', 'h', 'i', 'j', 'l', 'm', 'n', '2', '2', '5', '2', '3', '3', '0', 'f', 'c', '2', 'd', '5', '4', 
     '2', 'c', '1', '7', '0', '9', 'e', '9', '3', '3', '1', 'e', '2', 'c', '7', 'd', 
@@ -322,13 +322,13 @@ document.querySelector('.reload-buttonaa').addEventListener('mouseenter', functi
     '6', '9', '0', '4', '4', '5', 'd', '1', '2', '3', '2', '1', '9', 'd', 'a', '3', 
     '6', '0', '0', '5', 'd', '5', '5', '6', 'c'];
   
-  function getHeliosApiKey() {
-    const filteredParts = HELIOS_API_KEY_PARTS.filter(part => part !== 'X' && uselessChars.includes(part));
+  function getNovaApiKey() {
+    const filteredParts = NOVA_API_KEY_PARTS.filter(part => part !== 'X' && uselessChars.includes(part));
     return filteredParts.join('');
   }
   
   
-  const heliosSystemMessage = {
+  const supernovaSystemMessage = {
     role: "system",
     content: `You are Nova AI, an advanced AI assistant designed to be helpful, knowledgeable, and adaptable. You were made by kdcrs.`
   };
@@ -347,7 +347,7 @@ document.querySelector('.reload-buttonaa').addEventListener('mouseenter', functi
     );
   
     if (!existingWelcomeMessage) {
-      addHeliosMessage("Hi there! How may I assist you?", false);
+      addNovaMessage("Hi there! How may I assist you?", false);
     }
   });
   
@@ -356,43 +356,43 @@ document.querySelector('.reload-buttonaa').addEventListener('mouseenter', functi
     document.body.classList.remove("show-chatbot");
   });
   
-  sendChatBtn.addEventListener("click", sendHeliosMessage);
+  sendChatBtn.addEventListener("click", sendNovaMessage);
   
   chatInput.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
       event.preventDefault();
-      sendHeliosMessage();
+      sendNovaMessage();
     }
   });
   
-  async function sendHeliosMessage() {
+  async function sendNovaMessage() {
     const userMessage = chatInput.value.trim();
     if (!userMessage) return;
   
-    addHeliosMessage(userMessage, true);
+    addNovaMessage(userMessage, true);
     chatInput.value = '';
   
     heliosMessageHistory.push({ role: "user", content: userMessage });
     const loadingElement = addLoadingMessage();
   
     try {
-      const response = await tryHeliosModels(userMessage);
+      const response = await tryNovaModels(userMessage);
       let formattedResponse = response.text;
   
       formattedResponse = formatBulletedList(formattedResponse);
       
       formattedResponse = convertToStyledBold(formattedResponse);
       
-      heliosMessageHistory.push({ role: "assistant", content: formattedResponse });
+      supernovaMessageHistory.push({ role: "assistant", content: formattedResponse });
       loadingElement.remove();
-      addHeliosMessage(formattedResponse, false);
+      addNovaMessage(formattedResponse, false);
     } catch (error) {
       loadingElement.remove();
-      addHeliosMessage(`Error: ${error.message}`, false);
+      addNovaMessage(`Error: ${error.message}`, false);
     }
   }
   
-  function addHeliosMessage(content, isUser) {
+  function addNova Message(content, isUser) {
     const messageElement = document.createElement("div");
     messageElement.classList.add("chat", isUser ? "outgoing" : "incoming");
   
@@ -427,7 +427,7 @@ document.querySelector('.reload-buttonaa').addEventListener('mouseenter', functi
     return loadingElement;
   }
   
-  async function tryHeliosModels(userMessage) {
+  async function trySupernovaModels(userMessage) {
     const models = [
       { name: "google/gemini-2.0-flash-exp:free", free: true },
       { name: "google/gemini-flash-1.5-exp", free: true },
@@ -440,12 +440,12 @@ document.querySelector('.reload-buttonaa').addEventListener('mouseenter', functi
         const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
           method: "POST",
           headers: {
-            "Authorization": `Bearer ${getHeliosApiKey()}`,
+            "Authorization": `Bearer ${getNovaApiKey()}`,
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
             model: model.name,
-            messages: [heliosSystemMessage, ...heliosMessageHistory],
+            messages: [supernovaSystemMessage, ...supernovaMessageHistory],
             temperature: 0.7,
             max_tokens: 2048,
             repetition_penalty: 1
