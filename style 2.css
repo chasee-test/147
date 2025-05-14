@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Quicksand", sans-serif;
+    background-color: hsl(90, 34%, 54%);
+    background-image: linear-gradient(to top, hsl(120, 29%, 37%) 0%, hsl(90, 34%, 54%) 100%);;
+    color: #2e7d32;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    z-index: 0;
+    font-size: 12px;
+    font-weight: 400;
+}
+/* nav styling */
+.icon-nav {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.icon-nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: #2e7d32; /* Green color */
+    position: relative;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+/* Outlined icons (visible by default) */
+.icon-outline {
+    font-variation-settings: 'FILL' 0;
+    font-size: 32px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* Filled icons (hidden by default) */
+.icon-filled {
+    font-variation-settings: 'FILL' 1;
+    font-size: 32px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Hover effects */
+.icon-nav a:hover {
+    background-color: #e8f5e9; /* Light green background on hover */
+}
+
+.icon-nav a:hover .icon-outline {
+    opacity: 0;
+}
+
+.icon-nav a:hover .icon-filled {
+    opacity: 1;
+}
+
+/* Tooltip text on hover */
+.icon-nav a::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    font-family: 'Quicksand', sans-serif;
+    color: #2e7d32;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.icon-nav a:hover::after {
+    opacity: 1;
+}
+/* Header Layout */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    position: relative;
+    z-index: 100;
+    position: sticky;
+    top: 0;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #2e7d32; /* Green color */
+}
+
+/* Top-Right Navigation */
+.top-right-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.top-right-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    color: #2e7d32;
+}
+
+.top-right-nav a:hover {
+    background: #e8f5e9; /* Light green hover */
+    transform: scale(1.1);
+}
+
+/* Icon Styling */
+.top-right-nav .material-symbols-rounded {
+    font-size: 28px;
+}
